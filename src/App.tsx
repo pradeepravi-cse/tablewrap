@@ -1,24 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+
+import { header, body } from "./table";
+import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {header.map((head, index) => {
+        return (
+          <table>
+            <thead>
+              <tr>
+                <th>{head}</th>
+              </tr>
+            </thead>
+            <tbody>
+              {body.map((trow) => {
+                console.log(trow);
+                return (
+                  <tr>
+                    <td>{trow[index]}</td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        );
+      })}
     </div>
   );
 }
