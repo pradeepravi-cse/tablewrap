@@ -22,6 +22,6 @@ steps:
     arguments: 'build'
 - task: PublishBuildArtifacts@1
   inputs:
-    PathtoPublish: 'buil'
+    PathtoPublish: 'build'
     ArtifactName: 'table-wrapper'
     publishLocation: 'Container'
